@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Netflix Clone
+This is my Netflix clone. You can access to a preview with this link : https://netflix-clone-9a355.web.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies used
+For this project, I use : 
+- NodeJS 14.7.x LTS
+- React (create-react-app used to start this project)
+- Google Firebase
+- TMBD (Film API)
 
 ## Available Scripts
 
