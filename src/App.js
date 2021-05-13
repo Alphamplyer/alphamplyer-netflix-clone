@@ -2,7 +2,9 @@ import './App.css';
 
 import './requests';
 import React, {useEffect, useState} from "react";
-import Row from "./components/Row/Row";
+import Nav from "./components/Nav/Nav";
+import Banner from "./components/Banner/Banner";
+import MoviesPresentingRow from "./components/Row/MoviesPresentingRow";
 import {
   getFetchMoviesWithGenresRequest,
   getFetchNetflixOriginalsRequest,
@@ -18,7 +20,6 @@ function App() {
   useEffect(() => {
     async function fetchData () {
       const request = await axios.get(getMovieGenresRequest());
-      console.log(request);
       setGenres(request.data.genres);
       return request;
     }
@@ -28,13 +29,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Netflix Clone Front End</h1>
-      <Row title="NETFLIX ORIGINALS" fetchUrl={getFetchNetflixOriginalsRequest()} />
-      <Row title="Trending Now" fetchUrl={getFetchTrendingRequest()} />
+      <Nav />
+      <Banner />
+      <MoviesPresentingRow title="NETFLIX ORIGINALS" fetchUrl={getFetchNetflixOriginalsRequest()} isLargeRow />
+      <MoviesPresentingRow title="Trending Now" fetchUrl={getFetchTrendingRequest()} />
       { genres.map(genre => (
-        <Row
-          title={genre.name + " Movies"}
-          fetchUrl={getFetchMoviesWithGenresRequest([genre.id])}
+        <MoviesPresentingRow key={genre.name}
+                             title={genre.name + " Movies"}
+                             fetchUrl={getFetchMoviesWithGenresRequest([genre.id])}
         />
       ))}
     </div>
