@@ -1,4 +1,4 @@
-const REACT_APP_TMDB_V3_API_KEY = process.env.REACT_APP_TMDB_V3_API_KEY;
+export const REACT_APP_TMDB_V3_API_KEY = process.env.REACT_APP_TMDB_V3_API_KEY;
 
 const LANGUAGE = "en-US";
 const NETFLIX_NETWORK = 213;

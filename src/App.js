@@ -2,6 +2,8 @@ import './App.css';
 
 import './requests';
 import React, {useEffect, useState} from "react";
+import {NotificationContainer} from 'react-notifications';
+import './components/Notification/notifications.scss';
 import Nav from "./components/Nav/Nav";
 import Banner from "./components/Banner/Banner";
 import MoviesPresentingRow from "./components/Row/MoviesPresentingRow";
@@ -39,6 +41,7 @@ function App() {
                              fetchUrl={getFetchMoviesWithGenresRequest([genre.id])}
         />
       ))}
+      <NotificationContainer />
     </div>
   );
 }
